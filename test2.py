@@ -32,12 +32,13 @@ import fileinput
 
 if __name__ == '__main__':
     list1 = []
-    for i in range(1, 21):
+    for i in range(1, 41):
         filename = "file" + str(i) + ".txt"
         list1.append(filename)
     print(list1)
+    fileout = open("out.txt", "w", encoding="utf-8")
     for fileline in fileinput.input(files=list1):
-        print(fileline,end="")
+        print(fileline, end="")
         # 返回当前正在读取的文件的名称。在读取第一行之前，返回 None。
         print(fileinput.filename())
         # 返回当前文件的文件号。当前没有打开文件时，返回 -1。
@@ -54,3 +55,5 @@ if __name__ == '__main__':
         # fileinput.nextfile()
         # 关闭序列。
         # fileinput.close()
+        fileout.write(fileline)
+    fileout.close()

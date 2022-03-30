@@ -13,9 +13,9 @@
 import random
 
 if __name__ == '__main__':
-    for i in range(1, 21):
+    for i in range(1, 41):
         filename = "file" + str(i) + ".txt"
         print(filename)
         with open(filename, "w") as file:
-            for i in range(0, random.randint(3, 50)):
+            for i in range(0, random.randint(10, 50)):
                 file.write("第" + str(i) + "行" + ":-----测试-----" + filename + "\n")
